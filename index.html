@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tridev Palace — Hero Preview</title>
+<title>Tridev Palace — Hotel & Lodging in Pyuthan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -17,8 +17,9 @@
     --night:#191512;
   }
   *{box-sizing:border-box;}
-  body{margin:0; font-family:'Work Sans',sans-serif; background:var(--night);}
+  body{margin:0; font-family:'Work Sans',sans-serif; background:var(--night); color:var(--ivory); line-height:1.6;}
   a{text-decoration:none; color:inherit;}
+  img{max-width:100%; display:block; height:auto;}
 
   /* ---- Top info bar ---- */
   .infobar{
@@ -38,8 +39,8 @@
   /* ---- Nav ---- */
   .site-header{
     position:sticky; top:0; z-index:100;
-    background:rgba(25,21,18,0.35);
-    backdrop-filter:blur(6px);
+    background:rgba(25,21,18,0.92);
+    backdrop-filter:blur(8px);
     border-bottom:1px solid rgba(247,242,233,0.14);
   }
   .site-header .wrap{
@@ -70,7 +71,6 @@
     transition:all .2s ease;
   }
   .btn:hover{background:var(--gold-soft); color:var(--night); border-color:var(--gold-soft);}
-
   .nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
   .nav-toggle span{width:24px; height:2px; background:var(--ivory); display:block;}
 
@@ -142,23 +142,236 @@
   }
   .hero .cta:hover{background:var(--gold-soft); color:var(--night);}
 
+  /* ---- Sections ---- */
+  section{
+    padding:100px 28px;
+  }
+  .wrap{
+    max-width:1240px;
+    margin:0 auto;
+  }
+  h2{
+    font-family:'Great Vibes', cursive;
+    font-size:clamp(42px, 6vw, 68px);
+    text-align:center;
+    margin:0 0 60px;
+    color:var(--ivory);
+  }
+
+  /* About */
+  .about{
+    background:var(--ink);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-text p{
+    font-size:15.5px;
+    color:rgba(247,242,233,0.85);
+    margin-bottom:24px;
+  }
+
+  /* Rooms */
+  .rooms{
+    background:var(--night);
+  }
+  .rooms-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    gap:28px;
+  }
+  .room-card{
+    background:rgba(42,33,28,0.6);
+    border-radius:4px;
+    overflow:hidden;
+    transition:all .3s ease;
+  }
+  .room-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  }
+  .room-card img{
+    height:240px;
+    object-fit:cover;
+    width:100%;
+  }
+  .room-info{
+    padding:24px;
+  }
+  .room-info h3{
+    margin:0 0 8px;
+    font-size:22px;
+    color:var(--gold-soft);
+  }
+  .room-price{
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  .room-desc{
+    font-size:14.5px;
+    color:rgba(247,242,233,0.75);
+    margin-bottom:20px;
+  }
+
+  /* Amenities */
+  .amenities{
+    background:var(--ink);
+  }
+  .amenities-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:32px;
+  }
+  .amenity{
+    text-align:center;
+  }
+  .amenity-icon{
+    font-size:42px;
+    margin-bottom:16px;
+    color:var(--gold-soft);
+  }
+  .amenity h3{
+    margin:0 0 12px;
+    font-size:19px;
+  }
+
+  /* Gallery */
+  .gallery{
+    background:var(--night);
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:12px;
+  }
+  .gallery-grid img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    aspect-ratio:16/11;
+    border-radius:4px;
+    transition:transform .4s ease;
+  }
+  .gallery-grid img:hover{
+    transform:scale(1.04);
+  }
+
+  /* Testimonials */
+  .testimonials{
+    background:var(--ink);
+  }
+  .testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+    gap:40px;
+  }
+  .testimonial{
+    background:rgba(25,21,18,0.6);
+    padding:32px;
+    border-left:4px solid var(--gold);
+  }
+  .testimonial p{
+    font-style:italic;
+    color:rgba(247,242,233,0.9);
+    margin:0 0 20px;
+  }
+  .testimonial-author{
+    color:var(--gold-soft);
+    font-size:14px;
+  }
+
+  /* Contact */
+  .contact{
+    background:var(--night);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+  }
+  .contact-form input,
+  .contact-form textarea{
+    width:100%;
+    background:rgba(247,242,233,0.08);
+    border:1px solid rgba(231,198,122,0.2);
+    color:var(--ivory);
+    padding:14px 18px;
+    margin-bottom:18px;
+    font-size:15px;
+    border-radius:2px;
+  }
+  .contact-form textarea{
+    min-height:160px;
+    resize:vertical;
+  }
+  .contact-form button{
+    background:var(--gold-soft);
+    color:var(--night);
+    border:none;
+    padding:16px 42px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:all .2s;
+  }
+  .contact-form button:hover{
+    background:var(--gold);
+  }
+
+  /* Footer */
+  footer{
+    background:var(--night);
+    border-top:1px solid rgba(247,242,233,0.1);
+    padding:60px 28px 30px;
+    font-size:14px;
+    color:rgba(247,242,233,0.6);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:40px;
+    max-width:1240px;
+    margin:0 auto;
+  }
+  .footer-col h4{
+    color:var(--gold-soft);
+    margin-bottom:16px;
+    font-size:15px;
+    letter-spacing:0.05em;
+  }
+
+  /* Mobile */
+  @media (max-width:920px){
+    .about-grid, .contact-grid{
+      grid-template-columns:1fr;
+      gap:40px;
+    }
+  }
   @media (max-width:720px){
+    section{padding:80px 20px;}
     .nav-links{
       position:absolute; top:100%; left:0; right:0;
-      background:rgba(25,21,18,0.96);
+      background:rgba(25,21,18,0.98);
       flex-direction:column; align-items:flex-start;
       padding:20px 28px 28px; gap:18px;
       display:none;
+      box-shadow:0 10px 20px rgba(0,0,0,0.3);
     }
     .nav-links.open{display:flex;}
     .nav-toggle{display:flex;}
-    .infobar .wrap{justify-content:center; text-align:center;}
+    .infobar .wrap{justify-content:center; text-align:center; gap:12px;}
     .hero .sub{letter-spacing:0.18em; font-size:13px;}
   }
 </style>
 </head>
 <body>
 
+<!-- Infobar -->
 <div class="infobar">
   <div class="wrap">
     <div class="infobar-links">
@@ -169,33 +382,272 @@
   </div>
 </div>
 
+<!-- Header -->
 <header class="site-header">
   <div class="wrap">
     <a href="#" class="logo">Tridev Palace</a>
-    <nav class="nav-links">
-      <a href="#" class="active">Home</a>
-      <a href="#">Rooms</a>
-      <a href="#">Events</a>
-      <a href="#">Contact</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
       <a href="tel:+919857827544" class="btn">Call to Book</a>
     </nav>
-    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<section class="hero">
+<!-- Hero -->
+<section class="hero" id="home">
   <img src="images/hero-reception.jpg" alt="Tridev Palace reception desk">
   <div class="hero-content">
     <p class="eyebrow">Welcome To</p>
     <h1>Tridev Palace</h1>
-    <p class="sub">Hotel &amp; Lodging</p>
-    <a href="#" class="cta">Learn More</a>
+    <p class="sub">Hotel &amp; Lodging • Pyuthan, Nepal</p>
+    <a href="#rooms" class="cta">Explore Rooms</a>
   </div>
 </section>
 
+<!-- About -->
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>About Us</h2>
+    <div class="about-grid">
+      <div>
+        <img src="images/about-hotel.jpg" alt="Tridev Palace exterior" style="border-radius:4px;">
+      </div>
+      <div class="about-text">
+        <p>Nestled in the serene hills of Pyuthan, Tridev Palace offers a perfect blend of traditional Nepali hospitality and modern comfort. Our family-owned hotel has been welcoming guests for over a decade with warm service and breathtaking mountain views.</p>
+        <p>Whether you're here for business, a family vacation, or a peaceful retreat, we strive to make every stay memorable. Experience authentic local culture while enjoying world-class amenities.</p>
+        <p style="margin-top:32px; font-size:14px; color:var(--gold-soft);">
+          <strong>Since 2014 • Family Owned &amp; Operated</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rooms -->
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <h2>Our Rooms</h2>
+    <div class="rooms-grid">
+      <!-- Room 1 -->
+      <div class="room-card">
+        <img src="images/room-deluxe.jpg" alt="Deluxe Room">
+        <div class="room-info">
+          <h3>Deluxe Room</h3>
+          <div class="room-price">NPR 4,500 / night</div>
+          <p class="room-desc">Spacious room with king bed, mountain view, private balcony, and modern ensuite bathroom.</p>
+          <a href="#" class="btn" style="font-size:12px; padding:10px 20px;">Book Now</a>
+        </div>
+      </div>
+      <!-- Room 2 -->
+      <div class="room-card">
+        <img src="images/room-superior.jpg" alt="Superior Room">
+        <div class="room-info">
+          <h3>Superior Room</h3>
+          <div class="room-price">NPR 3,200 / night</div>
+          <p class="room-desc">Cozy and comfortable with twin or queen bed, work desk, and beautiful valley views.</p>
+          <a href="#" class="btn" style="font-size:12px; padding:10px 20px;">Book Now</a>
+        </div>
+      </div>
+      <!-- Room 3 -->
+      <div class="room-card">
+        <img src="images/room-suite.jpg" alt="Executive Suite">
+        <div class="room-info">
+          <h3>Executive Suite</h3>
+          <div class="room-price">NPR 7,800 / night</div>
+          <p class="room-desc">Luxurious two-room suite with living area, jacuzzi, and panoramic Himalayan views.</p>
+          <a href="#" class="btn" style="font-size:12px; padding:10px 20px;">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Amenities -->
+<section class="amenities" id="amenities">
+  <div class="wrap">
+    <h2>Amenities &amp; Facilities</h2>
+    <div class="amenities-grid">
+      <div class="amenity">
+        <div class="amenity-icon">🏔️</div>
+        <h3>Mountain View</h3>
+        <p>Stunning views of the surrounding hills from every room</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">🍽️</div>
+        <h3>Restaurant</h3>
+        <p>Multi-cuisine dining with local Nepali specialties</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">🅿️</div>
+        <h3>Free Parking</h3>
+        <p>Secure on-site parking for all guests</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">📶</div>
+        <h3>Free Wi-Fi</h3>
+        <p>High-speed internet throughout the property</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">🧖</div>
+        <h3>Spa Services</h3>
+        <p>Traditional massage and wellness treatments</p>
+      </div>
+      <div class="amenity">
+        <div class="amenity-icon">🏞️</div>
+        <h3>Trekking Tours</h3>
+        <p>Guided hikes and local sightseeing arranged</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="images/gallery-1.jpg" alt="Hotel exterior">
+      <img src="images/gallery-2.jpg" alt="Room interior">
+      <img src="images/gallery-3.jpg" alt="Dining area">
+      <img src="images/gallery-4.jpg" alt="Mountain view">
+      <img src="images/gallery-5.jpg" alt="Reception">
+      <img src="images/gallery-6.jpg" alt="Garden">
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="wrap">
+    <h2>What Our Guests Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>"The warm hospitality and beautiful views made our stay unforgettable. The staff went above and beyond to make us feel at home."</p>
+        <div class="testimonial-author">— Rajesh Sharma, Kathmandu</div>
+      </div>
+      <div class="testimonial">
+        <p>"Clean, comfortable rooms and delicious local food. Perfect place for a peaceful family vacation in Pyuthan."</p>
+        <div class="testimonial-author">— Priya &amp; Family, Pokhara</div>
+      </div>
+      <div class="testimonial">
+        <p>"Excellent service and great location. Will definitely return on my next visit to Pyuthan."</p>
+        <div class="testimonial-author">— Amit Patel, India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Get In Touch</h2>
+    <div class="contact-grid">
+      <div>
+        <h3 style="margin-bottom:24px; color:var(--gold-soft);">Visit Us</h3>
+        <p><strong>Tridev Palace</strong><br>
+        Pyuthan Bazar, Pyuthan, Nepal</p>
+        <p style="margin:24px 0;">
+          <strong>Phone:</strong> <a href="tel:+919857827544">+91 98578 27544</a><br>
+          <strong>Email:</strong> <a href="mailto:tridevpalace03@gmail.com">tridevpalace03@gmail.com</a>
+        </p>
+        <p><strong>Check-in:</strong> 12:00 PM<br>
+           <strong>Check-out:</strong> 11:00 AM</p>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="tel" placeholder="Phone Number">
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid wrap">
+    <div class="footer-col">
+      <div class="logo" style="font-size:28px; margin-bottom:12px;">Tridev Palace</div>
+      <p>Your home away from home in the heart of Pyuthan.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <p><a href="#about">About Us</a></p>
+      <p><a href="#rooms">Rooms &amp; Suites</a></p>
+      <p><a href="#amenities">Amenities</a></p>
+      <p><a href="#gallery">Gallery</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <p>Privacy Policy</p>
+      <p>Terms of Service</p>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <p>Facebook • Instagram</p>
+      <p style="margin-top:20px; font-size:13px;">
+        © 2026 Tridev Palace. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
 <script>
-  document.querySelector('.nav-toggle').addEventListener('click', function(){
-    document.querySelector('.nav-links').classList.toggle('open');
+  // Mobile menu toggle
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      if(this.getAttribute('href') !== '#'){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // Fake form submission
+  function handleSubmit(e){
+    e.preventDefault();
+    alert("Thank you! Your message has been received. We'll get back to you shortly.");
+    e.target.reset();
+  }
+
+  // Add active class to nav on scroll
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if(scrollY >= sectionTop - 200){
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === `#${current}`){
+        link.classList.add('active');
+      }
+    });
   });
 </script>
 </body>
