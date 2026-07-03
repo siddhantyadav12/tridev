@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tridev Palace — Hotel & Lodging in Pyuthan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
   :root{
     --ivory:#F7F2E9;
@@ -21,7 +22,15 @@
   a{text-decoration:none; color:inherit;}
   img{max-width:100%; display:block; height:auto;}
 
-  /* ---- Top info bar ---- */
+  /* Headline Font Changed */
+  h1, h2, .logo {
+    font-family: 'Playfair Display', serif;
+  }
+  .logo {
+    font-family: 'Great Vibes', cursive; /* Keeping original elegant script for logo */
+  }
+
+  /* Rest of styles remain similar */
   .infobar{
     background:var(--night);
     color:rgba(247,242,233,0.75);
@@ -36,7 +45,6 @@
   .infobar a{color:var(--gold-soft);}
   .infobar-links{display:flex; gap:22px; flex-wrap:wrap;}
 
-  /* ---- Nav ---- */
   .site-header{
     position:sticky; top:0; z-index:100;
     background:rgba(25,21,18,0.92);
@@ -48,7 +56,6 @@
     display:flex; align-items:center; justify-content:space-between;
   }
   .logo{
-    font-family:'Great Vibes', cursive;
     font-size:32px;
     color:var(--ivory);
     letter-spacing:0.01em;
@@ -71,10 +78,10 @@
     transition:all .2s ease;
   }
   .btn:hover{background:var(--gold-soft); color:var(--night); border-color:var(--gold-soft);}
+
   .nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
   .nav-toggle span{width:24px; height:2px; background:var(--ivory); display:block;}
 
-  /* ---- Hero ---- */
   .hero{
     position:relative;
     min-height:88vh;
@@ -91,9 +98,8 @@
   .hero::before{
     content:"";
     position:absolute; inset:0;
-    background:
-      radial-gradient(ellipse at center, rgba(20,15,12,0.72) 0%, rgba(20,15,12,0.58) 45%, rgba(20,15,12,0.42) 75%),
-      linear-gradient(0deg, rgba(15,11,9,0.75) 0%, rgba(15,11,9,0.25) 40%, rgba(15,11,9,0.35) 100%);
+    background: radial-gradient(ellipse at center, rgba(20,15,12,0.72) 0%, rgba(20,15,12,0.58) 45%, rgba(20,15,12,0.42) 75%),
+                linear-gradient(0deg, rgba(15,11,9,0.75) 0%, rgba(15,11,9,0.25) 40%, rgba(15,11,9,0.35) 100%);
   }
   .hero-content{
     position:relative;
@@ -109,7 +115,6 @@
     margin:0 0 18px;
   }
   .hero h1{
-    font-family:'Great Vibes', cursive;
     font-weight:400;
     font-size:clamp(58px, 9vw, 108px);
     line-height:1;
@@ -142,16 +147,9 @@
   }
   .hero .cta:hover{background:var(--gold-soft); color:var(--night);}
 
-  /* ---- Sections ---- */
-  section{
-    padding:100px 28px;
-  }
-  .wrap{
-    max-width:1240px;
-    margin:0 auto;
-  }
+  section{padding:100px 28px;}
+  .wrap{max-width:1240px; margin:0 auto;}
   h2{
-    font-family:'Great Vibes', cursive;
     font-size:clamp(42px, 6vw, 68px);
     text-align:center;
     margin:0 0 60px;
@@ -159,25 +157,16 @@
   }
 
   /* About */
-  .about{
-    background:var(--ink);
-  }
+  .about{background:var(--ink);}
   .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:60px;
     align-items:center;
   }
-  .about-text p{
-    font-size:15.5px;
-    color:rgba(247,242,233,0.85);
-    margin-bottom:24px;
-  }
 
   /* Rooms */
-  .rooms{
-    background:var(--night);
-  }
+  .rooms{background:var(--night);}
   .rooms-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
@@ -189,60 +178,50 @@
     overflow:hidden;
     transition:all .3s ease;
   }
-  .room-card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.4);
-  }
-  .room-card img{
-    height:240px;
-    object-fit:cover;
-    width:100%;
-  }
-  .room-info{
-    padding:24px;
-  }
-  .room-info h3{
-    margin:0 0 8px;
-    font-size:22px;
-    color:var(--gold-soft);
-  }
-  .room-price{
-    color:var(--gold);
-    font-weight:600;
-    margin-bottom:12px;
-  }
-  .room-desc{
-    font-size:14.5px;
-    color:rgba(247,242,233,0.75);
-    margin-bottom:20px;
-  }
+  .room-card:hover{transform:translateY(-12px); box-shadow:0 20px 40px rgba(0,0,0,0.4);}
+  .room-card img{height:240px; object-fit:cover; width:100%;}
+  .room-info{padding:24px;}
+  .room-info h3{margin:0 0 8px; font-size:22px; color:var(--gold-soft);}
+  .room-price{color:var(--gold); font-weight:600; margin-bottom:12px;}
+  .room-desc{font-size:14.5px; color:rgba(247,242,233,0.75); margin-bottom:20px;}
 
-  /* Amenities */
-  .amenities{
-    background:var(--ink);
-  }
+  /* Amenities - Improved Style */
+  .amenities{background:var(--ink);}
   .amenities-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
     gap:32px;
   }
   .amenity{
+    background:rgba(25,21,18,0.6);
+    padding:32px 24px;
+    border-radius:6px;
     text-align:center;
+    transition:all .3s ease;
+    border:1px solid rgba(231,198,122,0.1);
   }
-  .amenity-icon{
+  .amenity:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold-soft);
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+  }
+  .amenity i{
     font-size:42px;
-    margin-bottom:16px;
+    margin-bottom:20px;
     color:var(--gold-soft);
   }
   .amenity h3{
-    margin:0 0 12px;
-    font-size:19px;
+    margin:0 0 14px;
+    font-size:20px;
+    color:var(--ivory);
+  }
+  .amenity p{
+    color:rgba(247,242,233,0.8);
+    font-size:15px;
   }
 
-  /* Gallery */
-  .gallery{
-    background:var(--night);
-  }
+  /* Gallery, Testimonials, Contact, Footer - same as before */
+  .gallery{background:var(--night);}
   .gallery-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
@@ -256,14 +235,9 @@
     border-radius:4px;
     transition:transform .4s ease;
   }
-  .gallery-grid img:hover{
-    transform:scale(1.04);
-  }
+  .gallery-grid img:hover{transform:scale(1.04);}
 
-  /* Testimonials */
-  .testimonials{
-    background:var(--ink);
-  }
+  .testimonials{background:var(--ink);}
   .testimonial-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
@@ -274,25 +248,11 @@
     padding:32px;
     border-left:4px solid var(--gold);
   }
-  .testimonial p{
-    font-style:italic;
-    color:rgba(247,242,233,0.9);
-    margin:0 0 20px;
-  }
-  .testimonial-author{
-    color:var(--gold-soft);
-    font-size:14px;
-  }
+  .testimonial p{font-style:italic; color:rgba(247,242,233,0.9); margin:0 0 20px;}
+  .testimonial-author{color:var(--gold-soft); font-size:14px;}
 
-  /* Contact */
-  .contact{
-    background:var(--night);
-  }
-  .contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-  }
+  .contact{background:var(--night);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:80px;}
   .contact-form input,
   .contact-form textarea{
     width:100%;
@@ -304,10 +264,7 @@
     font-size:15px;
     border-radius:2px;
   }
-  .contact-form textarea{
-    min-height:160px;
-    resize:vertical;
-  }
+  .contact-form textarea{min-height:160px; resize:vertical;}
   .contact-form button{
     background:var(--gold-soft);
     color:var(--night);
@@ -319,11 +276,8 @@
     cursor:pointer;
     transition:all .2s;
   }
-  .contact-form button:hover{
-    background:var(--gold);
-  }
+  .contact-form button:hover{background:var(--gold);}
 
-  /* Footer */
   footer{
     background:var(--night);
     border-top:1px solid rgba(247,242,233,0.1);
@@ -345,12 +299,8 @@
     letter-spacing:0.05em;
   }
 
-  /* Mobile */
   @media (max-width:920px){
-    .about-grid, .contact-grid{
-      grid-template-columns:1fr;
-      gap:40px;
-    }
+    .about-grid, .contact-grid{grid-template-columns:1fr; gap:40px;}
   }
   @media (max-width:720px){
     section{padding:80px 20px;}
@@ -364,13 +314,12 @@
     }
     .nav-links.open{display:flex;}
     .nav-toggle{display:flex;}
-    .infobar .wrap{justify-content:center; text-align:center; gap:12px;}
-    .hero .sub{letter-spacing:0.18em; font-size:13px;}
   }
 </style>
 </head>
 <body>
 
+<!-- (Header, Hero, About, Rooms sections remain the same as previous version) -->
 <!-- Infobar -->
 <div class="infobar">
   <div class="wrap">
@@ -436,7 +385,6 @@
   <div class="wrap">
     <h2>Our Rooms</h2>
     <div class="rooms-grid">
-      <!-- Room 1 -->
       <div class="room-card">
         <img src="images/room-deluxe.jpg" alt="Deluxe Room">
         <div class="room-info">
@@ -446,7 +394,6 @@
           <a href="#" class="btn" style="font-size:12px; padding:10px 20px;">Book Now</a>
         </div>
       </div>
-      <!-- Room 2 -->
       <div class="room-card">
         <img src="images/room-superior.jpg" alt="Superior Room">
         <div class="room-info">
@@ -456,7 +403,6 @@
           <a href="#" class="btn" style="font-size:12px; padding:10px 20px;">Book Now</a>
         </div>
       </div>
-      <!-- Room 3 -->
       <div class="room-card">
         <img src="images/room-suite.jpg" alt="Executive Suite">
         <div class="room-info">
@@ -470,40 +416,40 @@
   </div>
 </section>
 
-<!-- Amenities -->
+<!-- Amenities - Updated with real icons -->
 <section class="amenities" id="amenities">
   <div class="wrap">
     <h2>Amenities &amp; Facilities</h2>
     <div class="amenities-grid">
       <div class="amenity">
-        <div class="amenity-icon">🏔️</div>
+        <i class="fas fa-mountain"></i>
         <h3>Mountain View</h3>
-        <p>Stunning views of the surrounding hills from every room</p>
+        <p>Stunning panoramic views of the hills from every room</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🍽️</div>
+        <i class="fas fa-utensils"></i>
         <h3>Restaurant</h3>
-        <p>Multi-cuisine dining with local Nepali specialties</p>
+        <p>Multi-cuisine dining featuring authentic Nepali and continental dishes</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🅿️</div>
+        <i class="fas fa-car"></i>
         <h3>Free Parking</h3>
-        <p>Secure on-site parking for all guests</p>
+        <p>Secure on-site parking available for all guests</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">📶</div>
-        <h3>Free Wi-Fi</h3>
-        <p>High-speed internet throughout the property</p>
+        <i class="fas fa-wifi"></i>
+        <h3>High-Speed WiFi</h3>
+        <p>Complimentary internet access throughout the property</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🧖</div>
-        <h3>Spa Services</h3>
-        <p>Traditional massage and wellness treatments</p>
+        <i class="fas fa-spa"></i>
+        <h3>Spa &amp; Wellness</h3>
+        <p>Traditional massages and rejuvenating treatments</p>
       </div>
       <div class="amenity">
-        <div class="amenity-icon">🏞️</div>
+        <i class="fas fa-hiking"></i>
         <h3>Trekking Tours</h3>
-        <p>Guided hikes and local sightseeing arranged</p>
+        <p>Guided treks and local sightseeing arrangements</p>
       </div>
     </div>
   </div>
@@ -604,49 +550,38 @@
 </footer>
 
 <script>
-  // Mobile menu toggle
   document.getElementById('navToggle').addEventListener('click', function(){
     document.getElementById('navLinks').classList.toggle('open');
   });
 
-  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e){
       if(this.getAttribute('href') !== '#'){
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
 
-  // Fake form submission
   function handleSubmit(e){
     e.preventDefault();
-    alert("Thank you! Your message has been received. We'll get back to you shortly.");
+    alert("Thank you! Your message has been received.");
     e.target.reset();
   }
 
-  // Add active class to nav on scroll
+  // Active nav
   window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
-    
     let current = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      if(scrollY >= sectionTop - 200){
-        current = section.getAttribute('id');
-      }
+      if(scrollY >= sectionTop - 200) current = section.getAttribute('id');
     });
-    
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if(link.getAttribute('href') === `#${current}`){
-        link.classList.add('active');
-      }
+      if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
     });
   });
 </script>
